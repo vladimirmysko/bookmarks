@@ -41,6 +41,14 @@ const config: Config = {
       },
     },
     extend: {
+      boxShadow: {
+        sm: '0 0 0 1px var(--gray-a3),0 0 0 0.5px var(--black-a1),0 1px 1px 0 var(--gray-a2),0 2px 1px -1px var(--black-a1),0 1px 3px 0 var(--black-a1)',
+        DEFAULT:
+          '0 0 0 1px var(--gray-a3), 0 2px 3px -2px var(--gray-a3), 0 3px 12px -4px var(--black-a2), 0 4px 16px -8px var(--black-a2)',
+        md: '0 0 0 1px var(--gray-a3), 0 8px 40px var(--black-a1), 0 12px 32px -16px var(--gray-a3)',
+        lg: '0 0 0 1px var(--gray-a3), 0 12px 60px var(--black-a3), 0 12px 32px -16px var(--gray-a5)',
+        xl: '0 0 0 1px var(--gray-a3), 0 12px 60px var(--black-a3), 0 16px 64px var(--gray-a2), 0 16px 36px -20px var(--gray-a7)',
+      },
       fontFamily: {
         sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
         mono: ['var(--font-jetbrains-mono)', ...defaultTheme.fontFamily.mono],
