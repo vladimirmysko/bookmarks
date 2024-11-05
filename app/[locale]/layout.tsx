@@ -4,6 +4,7 @@ import { getI18n } from '@/locales/server';
 import { cn } from '@/utils/cn';
 
 import { I18nProviderClient } from '@/locales/client';
+import { ThemeProvider } from 'next-themes';
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
@@ -38,12 +39,26 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={cn(inter.variable, jetBrainsMono.variable, 'antialiased')}
+        className={cn(
+          inter.variable,
+          jetBrainsMono.variable,
+          'font-sans antialiased',
+          'bg-gray-100 text-gray-1200'
+        )}
         style={{ textRendering: 'optimizeLegibility' }}
       >
-        <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
+        <I18nProviderClient locale={locale}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </I18nProviderClient>
       </body>
     </html>
   );

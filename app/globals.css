@@ -2,20 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  @import '@radix-ui/colors/gray.css';
+  @import '@radix-ui/colors/gray-alpha.css';
+  @import '@radix-ui/colors/gray-dark.css';
+  @import '@radix-ui/colors/gray-dark-alpha.css';
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @import '@radix-ui/colors/black-alpha.css';
 }
