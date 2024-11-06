@@ -45,7 +45,8 @@ export default async function LocaleLayout({
           inter.variable,
           jetBrainsMono.variable,
           'font-sans antialiased',
-          'bg-gray-100 text-gray-1200'
+          'bg-gray-100 text-gray-1200',
+          'selection:bg-alpha-500'
         )}
         style={{ textRendering: 'optimizeLegibility' }}
       >
